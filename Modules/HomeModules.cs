@@ -29,9 +29,13 @@ namespace AddressBook.Objects
 
       Get["/contacts/{id}"] = parameters => {
         Contact newContact = Contact.Find(parameters.id);
-        return View["newadded.cshtml", newcontact];
+        return View["newadded.cshtml", newContact];
       };
 
+      Post["/contacts/clear"] = _ => {
+        Contact.Clear();
+        return View["contacts/clear.cshtml"];
+      };
 
 
 

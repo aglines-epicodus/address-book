@@ -6,14 +6,15 @@
 <ul>
   @foreach (var contact in @Model)
   {
-    <li><a href='/contact/@contact.GetId()'>@contact.GetName()</a></li>
+    <li><a href='/contacts/@contact.GetId()'>@contact.GetName()</a></li>
   }
 </ul>
 
 
 <a href = "/contacts/addnew">Add a new contact here</a>
 
-
-<form action="/contact/clear" method="post">
-  <button id="clearAll" type="submit" name="button">CLEAR ALL CONTACTS</button>
-</form>
+<div>
+  <form action="/contacts/clear" method="post">
+    <button id="clearAll" type="submit" name="button">Clear all contacts</button>
+  </form>
+</div>

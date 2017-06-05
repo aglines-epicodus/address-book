@@ -45,10 +45,7 @@ namespace AddressBook.Objects
     {
       _contacts.Clear();
     }
-    public void Remove()
-    {
-      _contacts.Remove(this);
-    }
+
 
     public static Contact Find(int searchId)
     {
