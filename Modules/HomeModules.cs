@@ -1,4 +1,5 @@
 using Nancy;
+using System;
 using System.Collections.Generic;
 using AddressBook.Objects;
 
@@ -8,7 +9,10 @@ namespace AddressBook.Objects
   {
     public HomeModule()
     {
-      Get ["/"] = _ => View["index.cshtml"];
+      Get ["/"] = _ => {
+        List<Contact> Contacts = Contact.GetAll();
+        return View["viewall.cshtml", Contacts];
+      };
 
       // Get["/"] = _ => View["add_new_task.cshtml"];
       // // Get["/view_all_tasks"] = _ => {
