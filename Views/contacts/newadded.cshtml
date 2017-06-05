@@ -1,0 +1,16 @@
+@{
+  Layout = "Shared/_Layout.cshtml";
+}
+
+
+<h3>You created a contact!</h3>
+<div id="newContact">
+  <ul>
+    <li>Name: @Model.GetName()</li>
+    <li>Phone: @Model.GetEmail()</li>
+    <li>Email: @Model.GetPhone()</li>
+  </ul>
+</div>
+
+<a href="/contacts">Add new contact</a>
+<a href="/">Return Home</a>

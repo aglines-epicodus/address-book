@@ -9,6 +9,7 @@ namespace AddressBook.Objects
     private string _phone;
     private string _email;
     private static List<Contact> _contacts = new List<Contact> {};
+    private int _id;
 
     public Contact(string name, string phone, string email)
     {
@@ -16,7 +17,7 @@ namespace AddressBook.Objects
       _phone = phone;
       _email = email;
       _contacts.Add(this);
-
+      _id = _contacts.Count;
     }
 
     public string GetName()
@@ -35,36 +36,27 @@ namespace AddressBook.Objects
     {
       return _contacts;
     }
+    public int GetId()
+    {
+      return _id;
+    }
 
-}
+    public static void Clear()
+    {
+      _contacts.Clear();
+    }
+    public void Remove()
+    {
+      _contacts.Remove(this);
+    }
 
+    public static Contact Find(int searchId)
+    {
+      return _contacts[searchId - 1];
+    }
 
-    // public string GetName()
-    // {
-    //   name = _name;
-    // }
-    // public string GetPhone()
-    // {
-    //   _phone = phone;
-    // }
-    // public string GetEmail()
-    // {
-    //   _email = email;
-    // }
-    //
-    // public void SetName(string newName)
-    // {
-    //   _name = newName;
-    // }
-    // public void SetPhone(string newPhone)
-    // {
-    //   _phone = newPhone;
-    // }
-    // public void SetEmail(string newEmail)
-    // {
-    //   _email = newEmail;
-    // }
 
 
 
   }
+}
