@@ -36,12 +36,6 @@ namespace AddressBook.Objects
         Contact.Clear();
         return View["contacts/clear.cshtml"];
       };
-
-
-
-
-
-
     }
   }
 }

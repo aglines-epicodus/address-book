@@ -19,7 +19,6 @@ namespace AddressBook.Objects
       _contacts.Add(this);
       _id = _contacts.Count;
     }
-
     public string GetName()
     {
       return _name;
@@ -40,20 +39,13 @@ namespace AddressBook.Objects
     {
       return _id;
     }
-
     public static void Clear()
     {
       _contacts.Clear();
     }
-
-
     public static Contact Find(int searchId)
     {
       return _contacts[searchId - 1];
     }
-
-
-
-
   }
 }
