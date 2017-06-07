@@ -22,14 +22,14 @@ namespace AddressBook.Objects
 
       Post["/contacts/addnew"] = _ =>
       {
-        int count = 1;
+        // int count = 1;
         Contact newContact = new Contact(Request.Form["contactName"], Request.Form["contactEmail"], Request.Form["contactPhone"]);
         return View["contacts/newadded.cshtml", newContact];
       };
 
       Get["/contacts/{id}"] = parameters => {
         Contact newContact = Contact.Find(parameters.id);
-        return View["newadded.cshtml", newContact];
+        return View["contacts/newadded.cshtml", newContact];
       };
 
       Post["/contacts/clear"] = _ => {
